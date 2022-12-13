@@ -19,7 +19,7 @@ addPost.addEventListener('click', () => {
 });
 
 addPostButton.addEventListener('click', () => {
-  fetch('http://localhost:4444/posts', {
+  fetch('http://localhost:4444/posts', { // post-запрос на отправку данных, которые пользователь вводит
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
@@ -28,21 +28,19 @@ addPostButton.addEventListener('click', () => {
       title: postTitle.value,
       text: postText.value,
     })
-  });
-  console.log({
-    title: postTitle.value,
-    text: postText.value,
-  });
+  })
+  .then(response => response.json())
+  .then(response => posts.push(response)); // добавляем результат запроса в массив
   hideForm();
 });
 
-function hideForm() {
+function hideForm() { // скрывет форму создания поста
   addPostForm.style.display = 'none';
   showPosts.disabled = false;
   addPost.disabled = false;
 }
 
-function showForm() {
+function showForm() { // показывает форму создания поста
   addPostForm.style.display = 'block';
   showPosts.disabled = true;
   addPost.disabled = true;
