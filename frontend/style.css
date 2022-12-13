@@ -1,0 +1,55 @@
+.post-item {
+    background-color: #dfdfdf;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    padding: .5vw;
+    margin: .5vw;
+    width: 25vw;
+    font-size: 1.2vw;
+}
+
+.post-item:hover {
+    background-color: lightgreen;
+}
+
+.description {
+    font-size: .7vw;
+}
+
+.button {
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2vw;
+    height: 5vh;
+    width: 15vw;
+    background-color: lightskyblue;
+}
+
+.button:hover {
+    background-color: lightseagreen;
+}
+
+.add-post-form {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    height: 50vh;
+    background-color: #dfdfdf;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: .5vw;
+    margin: .5vw auto;
+    font-size: 1.2vw;
+
+}
+
+.add-post-form input {
+    font-size: 1.2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 20vw;
+    margin: .5vw auto;
+}
+
+.form-button {
+    display: block;
+    margin: .5vh auto;
+}
