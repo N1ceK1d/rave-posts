@@ -30,7 +30,6 @@ app.post('/posts', async (req, res) => {
             text: req.body.text,
             user: req.userId
         });
-
     post = await new_post.save();
     console.log(post);
     res.json(post);
