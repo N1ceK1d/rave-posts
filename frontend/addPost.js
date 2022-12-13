@@ -14,6 +14,8 @@ closeFormButton.addEventListener('click', () => {
 
 addPost.addEventListener('click', () => {
   showForm();
+  postsList.style.display = 'none';
+  showPosts.innerHTML = 'Показать все посты';
 });
 
 addPostButton.addEventListener('click', () => {

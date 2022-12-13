@@ -3,26 +3,19 @@ const showPosts = document.querySelector('.showPosts');
 
 postsList.style.display = 'none';
 
-let posts = [];
-
-fetch('http://localhost:4444/posts')
-    .then(response => response.json())
-    .then(data => {
-        for (let item of data) {
-            posts.push(item);
-        }
-    });
-
 showPosts.addEventListener('click', () => {
-    if (showPosts.innerHTML == 'Показать все посты') {
-        for (let item of posts) {
-            postsList.appendChild(createPost(
-                item.title, item.text, item.createdAt, item.updatedAt, item.viewCount, item.tags
-            ));
-        }
+    if (showPosts.innerHTML == 'Показать все посты') { 
+        fetch('http://localhost:4444/posts')
+            .then(response => response.json())
+            .then(data => {
+                for (let item of data) {
+                    postsList.appendChild(createPost(
+                        item.title, item.text, item.createdAt, item.updatedAt, item.viewCount, item.tags
+                    ));
+                }
+            });
         postsList.style.display = 'block';
         showPosts.innerHTML = 'Скрыть посты';
-        
     } else {
         postsList.style.display = 'none';
         showPosts.innerHTML = 'Показать все посты';
