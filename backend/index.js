@@ -18,8 +18,9 @@ mongoose.set('strictQuery', true);
 mongoose.connect('mongodb+srv://admin:rIbplCZpPavfbwkA@cluster0.1cogdfr.mongodb.net/blog?retryWrites=true&w=majority');
 let post;
 
-app.get('/posts', (req, res) => {
-    res.send(post);
+app.get('/posts', async (req, res) => {
+    let posts = await postSchema.find();
+    res.send(posts);
 })
 
 app.post('/posts', async (req, res) => {
@@ -30,8 +31,7 @@ app.post('/posts', async (req, res) => {
             user: req.userId
         });
 
-    post = new_post.save();
-    post = await postSchema.find();
+    post = await new_post.save();
     console.log(post);
     res.json(post);
 })
@@ -39,4 +39,3 @@ app.post('/posts', async (req, res) => {
 app.listen(port, () => {
     console.log("Server started!")
 });
-
