@@ -17,7 +17,7 @@ showPosts.addEventListener('click', () => {
     if (showPosts.innerHTML == 'Показать все посты') {
         for (let item of posts) {
             postsList.appendChild(createPost(
-                item.title, item.text, item.createdAt, item.updatedAt, item.viewCount
+                item.title, item.text, item.createdAt, item.updatedAt, item.viewCount, item.tags
             ));
         }
         postsList.style.display = 'block';
@@ -29,7 +29,7 @@ showPosts.addEventListener('click', () => {
     }
 });
 
-function createPost(title, text, createdAt, updatedAt, views) {
+function createPost(title, text, createdAt, updatedAt, views, tags) {
     let li = document.createElement('li');
     li.setAttribute('class', 'post-item');
     li.innerHTML = `
@@ -38,6 +38,7 @@ function createPost(title, text, createdAt, updatedAt, views) {
         <p class="description">Создано: ${createdAt}</p>
         <p class="description">Обновлено: ${updatedAt}</p>
         <p class="description">Просморов: ${views}</p>
+        <p class="tags">Тэги: ${tags[0]}, ${tags[1]}</p>
     `;
     return li;
 };
