@@ -30,7 +30,12 @@ addPostButton.addEventListener('click', () => {
     })
   })
   .then(response => response.json())
-  .then(response => posts.push(response)); // добавляем результат запроса в массив
+  .then(response => {
+    posts.push(response);
+    console.log(posts.length);
+    createPaginationButtons(posts.length);
+    goToPage()
+  }); // добавляем результат запроса в массив
   hideForm();
 });
 

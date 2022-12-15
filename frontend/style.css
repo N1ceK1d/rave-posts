@@ -27,6 +27,7 @@
 
 .button:hover {
     background-color: rgb(79, 193, 231);
+    cursor: pointer;
 }
 
 .add-post-form {
@@ -53,4 +54,28 @@
 .form-button {
     display: block;
     margin: .5vh auto;
+}
+
+.pagination-block {
+    display: flex;
+    flex-direction: row;
+    display: block;
+    margin: 0 auto;
+}
+
+.pagination-item {
+    list-style: none;
+    background-color: lightskyblue;
+    font-size: 1.5vw;
+    margin: .5vw;
+    width: 2vw;
+    height: 3.3vh;
+    text-align: center;
+    padding: .1vw;
+    border: none;
+}
+
+.pagination-item:hover {
+    background-color: rgb(79, 193, 231);
+    cursor: pointer;
 }
