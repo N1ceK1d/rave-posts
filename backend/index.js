@@ -1,4 +1,4 @@
-import postSchema from './post.js';
+import postSchema from './modules/post.js';
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
@@ -15,7 +15,7 @@ const port = 4444;
 
 mongoose.set('strictQuery', true);
 
-mongoose.connect('mongodb+srv://admin:rIbplCZpPavfbwkA@cluster0.1cogdfr.mongodb.net/blog?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://student0:UiYlrMn3I6zorh68@cluster0.rbt9re3.mongodb.net/?retryWrites=true&w=majority');
 let post;
 
 app.get('/posts', async (req, res) => {
@@ -28,7 +28,7 @@ app.post('/posts', async (req, res) => {
         {
             title: req.body.title,
             text: req.body.text,
-            user: req.userId
+            author: 'is2-24-falaleevna'
         });
     post = await new_post.save();
     console.log(post);
