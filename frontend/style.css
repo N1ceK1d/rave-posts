@@ -1,3 +1,7 @@
+body {
+    display: flex;
+}
+
 .post-item {
     background-color: #dfdfdf;
     font-family: Arial, Helvetica, sans-serif;
@@ -61,15 +65,16 @@
     flex-direction: row;
     display: block;
     margin: 0 auto;
+    height: 5vh;
 }
 
 .pagination-item {
     list-style: none;
     background-color: lightskyblue;
     font-size: 1.5vw;
-    margin: .5vw;
+    margin: .2vw;
     width: 2vw;
-    height: 3.3vh;
+    height: 4vh;
     text-align: center;
     padding: .1vw;
     border: none;
@@ -78,4 +83,35 @@
 .pagination-item:hover {
     background-color: rgb(79, 193, 231);
     cursor: pointer;
+}
+
+.posts-block {
+    height: 82vh;
+    overflow-y: auto;
+}
+
+.posts-block {
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.posts-block::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.direction-btn {
+    background-color: lightskyblue;
+    font-size: 1.5vw;
+    margin: .2vw;
+    width: 2vw;
+    height: 4vh;
+    text-align: center;
+    padding: .1vw;
+    border: none;
+}
+
+.search-block {
+    width: 40vw;
 }
